@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.android.base.BaseActivity;
-import com.example.android.tags.listview.ImageTextAdapter;
+import com.example.android.tags.listview.adapter.ImageTextAdapter;
 import com.example.android.tags.listview.entity.ImageText;
 import com.example.readforecast.R;
 
