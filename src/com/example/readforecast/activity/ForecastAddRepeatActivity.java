@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -32,8 +33,9 @@ import com.example.readforecast.R;
  * @datetime 2015-6-15 下午3:43:34
  */
 public class ForecastAddRepeatActivity extends BaseActivity implements
-		OnItemClickListener {
-
+		OnItemClickListener,OnClickListener {
+	private Intent resultIntent;
+	
 	public static void actionStrat(Activity activity, int sel_item) {
 		Intent intent = new Intent(activity, ForecastAddRepeatActivity.class);
 		intent.putExtra("sel_item", sel_item);
@@ -47,19 +49,19 @@ public class ForecastAddRepeatActivity extends BaseActivity implements
 		ListView listView = (ListView) findViewById(R.id.listview_repeat);
 
 		List<String> l_s_item = new ArrayList<String>();
-		l_s_item.add("每周");
 		l_s_item.add("每日");
 		l_s_item.add("每个工作日（星期一到星期五）");
 
-		
+		resultIntent = new Intent();
 		
 		ArrayAdapter<String> adapter_repeat = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_single_choice, l_s_item);
 		
-		listView.setItemChecked(getIntent().getIntExtra("sel_item", 0), true);
 		listView.setAdapter(adapter_repeat);
 		listView.setOnItemClickListener(this);
-
+		listView.setSelected(true);
+		listView.setSelection(0);
+		listView.setItemChecked(getIntent().getIntExtra("sel_item", 0), true);
 	}
 
 	@Override
@@ -73,6 +75,22 @@ public class ForecastAddRepeatActivity extends BaseActivity implements
 			textView.setChecked(false);
 		}else{
 			textView.setChecked(true);
+			resultIntent.putExtra("week", position);
 		}
 	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+//		switch (v.getId()) {
+//		case R.:
+//			
+//			break;
+//
+//		default:
+//			break;
+//		}
+	}
+	
+	
 }
