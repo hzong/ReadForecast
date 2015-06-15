@@ -50,7 +50,6 @@ public class ForecastAddRepeatActivity extends BaseActivity implements
 		l_s_item.add("每周");
 		l_s_item.add("每日");
 		l_s_item.add("每个工作日（星期一到星期五）");
-		l_s_item.add("每周");
 
 		
 		
