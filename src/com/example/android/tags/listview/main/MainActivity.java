@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.android.base.BaseActivity;
-import com.example.android.tags.listview.adapter.ImageTextAdapter;
+//import com.example.android.tags.listview.adapter.ImageTextAdapter;
 import com.example.android.tags.listview.entity.ImageText;
 import com.example.readforecast.R;
 
@@ -60,10 +60,10 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     */ 
     public void customListView(){
     	initImageTests();
-    	ImageTextAdapter adapter = new ImageTextAdapter(MainActivity.this, R.layout.activity_sys_tag_listview_imagetext_item, imageTexts);
-    	ListView listView =(ListView)findViewById(R.id.list_view);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(this);
+//    	ImageTextAdapter adapter = new ImageTextAdapter(MainActivity.this, R.layout.activity_sys_tag_listview_imagetext_item, imageTexts);
+//    	ListView listView =(ListView)findViewById(R.id.list_view);
+//        listView.setAdapter(adapter);
+//        listView.setOnItemClickListener(this);
     }
     
     /** 

@@ -1,152 +1,185 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#212121"
-    android:orientation="vertical"
-    android:padding="5dp"
-    android:stretchColumns="*" >
+    android:orientation="vertical" >
 
-    <TableRow>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:stretchColumns="*" >
 
-            <ImageView
-                android:id="@+id/iv_create_iconforecast"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/iconfont_forecast16" />
+            <TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/iv_create_iconforecast"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/iconfont_forecast16" />
+
+                    <TextView
+                        android:id="@+id/tx_title_hour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=": "
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tx_title_minutes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="55"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow>
+
+                <TimePicker
+                    android:id="@+id/tp_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+            </TableRow>
 
             <TextView
-                android:id="@+id/tx_title_hour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="16"
-                android:textColor="@color/white" />
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#607d8b" />
+
+            <TableRow android:id="@+id/tableRow_forecast_repeat_title">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="预报重复"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow android:layout_margin="5dp"
+                android:id="@+id/tableRow_forecast_repeat_content"
+                 >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/week_one"
+                        android:textColor="@color/gainsboro" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/week_two"
+                        android:textColor="@color/gainsboro" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/week_three"
+                        android:textColor="@color/gainsboro" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/week_four"
+                        android:textColor="@color/gainsboro" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/week_five"
+                        android:textColor="@color/gainsboro" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/week_six"
+                        android:textColor="@color/gainsboro" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/week_sun"
+                        android:textColor="@color/gainsboro" />
+                </LinearLayout>
+            </TableRow>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=": "
-                android:textColor="@color/white" />
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#607d8b" />
 
-            <TextView
-                android:id="@+id/tx_title_minutes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="55"
-                android:textColor="@color/white" />
-        </LinearLayout>
-    </TableRow>
+            <TableRow>
 
-    <TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="名称"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </TableRow>
 
-        <TimePicker
-            android:id="@+id/timePicker1"
+            <TableRow android:layout_margin="5dp" >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1" />
-    </TableRow>
+            android:layout_gravity="bottom|left"
+            android:layout_weight="1"
+            android:text="存储"
+            android:textSize="25sp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#607d8b" />
-
-    <TableRow>
-
-        <TextView
-            android:layout_width="match_parent"
+        <Button
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="预报重复"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-    </TableRow>
+            android:layout_gravity="bottom|right"
+            android:layout_weight="1"
+            android:text="取消"
+            android:textSize="25sp" />
+    </LinearLayout>
 
-    <TableRow android:layout_margin="5dp" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/week_one"
-                android:textColor="@color/gainsboro" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/week_two"
-                android:textColor="@color/gainsboro" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/week_three"
-                android:textColor="@color/gainsboro" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/week_four"
-                android:textColor="@color/gainsboro" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/week_five"
-                android:textColor="@color/gainsboro" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/week_six"
-                android:textColor="@color/gainsboro" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/week_sun"
-                android:textColor="@color/gainsboro" />
-        </LinearLayout>
-    </TableRow>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#607d8b" />
-
-    <TableRow>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="名称"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-    </TableRow>
-
-    <TableRow android:layout_margin="5dp" >
-
-        <EditText 
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-             />
-        
-    </TableRow>
-
-    
-    
-</TableLayout>
+</LinearLayout>

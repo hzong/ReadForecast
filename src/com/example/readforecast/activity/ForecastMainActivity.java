@@ -2,11 +2,10 @@ package com.example.readforecast.activity;
 
 import com.example.android.base.BaseActivity;
 import com.example.readforecast.R;
+import com.example.readforecast.view.ForecastMainView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.LinearLayout;
 
 
 /** 
@@ -15,29 +14,28 @@ import android.widget.LinearLayout;
 * @author  hzong
 * @datetime  2015-6-13 ÏÂÎç5:56:56  
 */ 
-public class ForecastMainActivity extends BaseActivity implements OnClickListener {
+public class ForecastMainActivity extends BaseActivity {
 	
-	LinearLayout layout_create;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forecast_main);
-        layout_create =(LinearLayout)findViewById(R.id.create_item);
-        layout_create.setOnClickListener(this);
+        new ForecastMainView(this);
+        
     }
-
-	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		switch (v.getId()) {
-		case R.id.create_item:
-			ForecastAddActivity.actionStart(this);
+    @Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		switch (requestCode) {
+		case 1:
+			if(resultCode == RESULT_OK){
+				
+			}
 			break;
 
 		default:
 			break;
 		}
+		
 	}
-
 }

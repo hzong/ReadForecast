@@ -15,6 +15,9 @@ import android.os.Bundle;
 import android.text.style.SuperscriptSpan;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ListView;
+import android.widget.TableRow;
+import android.widget.TimePicker;
 
 import com.example.android.base.BaseActivity;
 import com.example.android.manager.activity.ActivityCollector;
@@ -28,32 +31,31 @@ import com.example.readforecast.R;
  */
 public class ForecastAddActivity extends BaseActivity implements
 		OnClickListener {
-
 	public static void actionStart(Activity activity){
 		Intent intent = new Intent(activity, ForecastAddActivity.class);
 		activity.startActivityForResult(intent, 1);
 	}
 	
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		switch (requestCode) {
-		case 1:
-			if(resultCode == RESULT_OK){
-				
-			}
-			break;
-
-		default:
-			break;
-		}
-		
-	}
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		  setContentView(R.layout.activity_forecast_add);
+//		  ForecastAddRepeatActivity
+		  TimePicker tp_time  = (TimePicker)findViewById(R.id.tp_time);
+		  tp_time.setIs24HourView(true);
+		  
+		  TableRow tableRow = (TableRow)findViewById(R.id.tableRow_forecast_repeat_title);
+		  tableRow.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				ForecastAddRepeatActivity.actionStrat(ForecastAddActivity.this, 1);
+			}
+		});
 	}
 	
 	/** 

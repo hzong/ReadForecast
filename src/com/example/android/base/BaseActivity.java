@@ -18,8 +18,13 @@ import android.view.Window;
  * @datetime 2015-5-14 обнГ8:37:58
  */
 public class BaseActivity extends Activity {
+	private final String tag = "BaseActivity";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		Log.d(tag, this.getClass().getName());
+		ActivityCollector.addActivity(this);
 	}
 
 	@Override
@@ -30,7 +35,7 @@ public class BaseActivity extends Activity {
 
 	@Override
 	protected void onDestroy() {
-		super.onDestroy();
 		ActivityCollector.removeActivity(this);
+		super.onDestroy();
 	}
 }

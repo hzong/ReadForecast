@@ -10,8 +10,6 @@ package com.example.android.tags.listview.entity;
 
 import com.example.android.util.DateTimeUtil;
 
-import android.widget.ImageView;
-import android.widget.TextView;
 
 /** 
  * @className  ImageText 
@@ -20,7 +18,6 @@ import android.widget.TextView;
  * @datetime  2015-5-18 下午8:41:49  
  */
 public class Forecast {
-	private Forecast(){}
 	/** 
 	* @fieldName tv_name
 	* @describe 名称
@@ -38,7 +35,7 @@ public class Forecast {
 	* @describe 一周
 	* @fieldType boolean[]
 	*/ 
-	boolean[] week = new boolean[7];
+	int[] week;
 	/** 
 	* @fieldName is_use
 	* @describe 是否使用
@@ -59,10 +56,10 @@ public class Forecast {
 	public void setForecast_time(String forecast_time) {
 		this.forecast_time = forecast_time;
 	}
-	public boolean[] getWeek() {
+	public int[] getWeek() {
 		return week;
 	}
-	public void setWeek(boolean[] week) {
+	public void setWeek(int[] week) {
 		this.week = week;
 	}
 	public boolean isIs_use() {
